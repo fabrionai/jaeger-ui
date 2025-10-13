@@ -15,7 +15,30 @@ limitations under the License.
 */
 
 :root {
-  --tx-color-title: rgba(0, 0, 0, 0.85);
-  --tx-color-body: rgba(0, 0, 0, 0.65);
-  --tx-color-muted: #aaa;
+  /* Dark Mode Colors */
+  --tx-color-title: #ffffff;
+  --tx-color-body: rgba(255, 255, 255, 0.85);
+  --tx-color-muted: #9b999a;
+
+  /* Brand Colors */
+  --brand-grey: #313131;
+  --brand-grey-70: #4f4d4e;
+  --brand-grey-40: #9b999a;
+  --brand-red: #fe161e;
+  --brand-white: #ffffff;
+
+  /* Background Colors */
+  --bg-primary: #000000;
+  --bg-secondary: #4f4d4e;
+  --bg-tertiary: #9b999a;
+
+  /* Text Colors */
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.85);
+  --text-muted: #9b999a;
+
+  /* Accent Colors */
+  --accent-primary: #fe161e;
+  --accent-hover: #ff4449;
+  --accent-active: #d11218;
 }

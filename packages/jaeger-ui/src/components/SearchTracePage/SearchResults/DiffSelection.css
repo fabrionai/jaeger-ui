@@ -21,14 +21,13 @@ limitations under the License.
 }
 
 .DiffSelection--message {
-  background: #f5f5f5;
+  background: #4f4d4e;
   z-index: 11;
-  background: #e5f2f2;
-  border: 1px solid #87c3c3;
+  border: 1px solid #fe161e;
   padding: 1rem;
 }
 
 .DiffSelection--selectedItems {
-  border: 1px solid #ccc;
+  border: 1px solid #9b999a;
   border-bottom: none;
 }

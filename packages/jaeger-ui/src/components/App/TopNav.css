@@ -32,5 +32,35 @@ limitations under the License.
 }
 
 .Menu--item .ant-menu-title-content {
-  color: white;
+  color: white !important;
+}
+
+.Menu--item .ant-menu-title-content a {
+  color: white !important;
+}
+
+.Menu--item .ant-menu-item {
+  color: white !important;
+}
+
+.Menu--item .ant-menu-item:hover {
+  color: white !important;
+}
+
+.Menu--item .ant-menu-item a:hover {
+  color: white !important;
+}
+
+/* Mobile view - override dark theme background to black */
+@media screen and (max-width: 768px) {
+  .Menu--item.ant-menu-dark,
+  .Menu--item.ant-menu-dark .ant-menu-sub,
+  .Menu--item.ant-menu-dark .ant-menu-submenu-popup,
+  .ant-menu-dark,
+  .ant-menu-dark .ant-menu-sub,
+  .ant-menu.ant-menu-dark,
+  .ant-menu-submenu-popup.ant-menu-dark,
+  .ant-dropdown-menu.ant-dropdown-menu-dark {
+    background-color: #000000 !important;
+  }
 }

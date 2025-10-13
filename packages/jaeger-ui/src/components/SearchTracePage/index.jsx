@@ -36,7 +36,7 @@ import { stripEmbeddedState } from '../../utils/embedded-url';
 import FileLoader from './FileLoader';
 
 import './index.css';
-import JaegerLogo from '../../img/jaeger-logo.svg';
+import JaegerLogo from '../../img/fabrion-logo.png';
 import withRouteProps from '../../utils/withRouteProps';
 import { trackSortByChange } from './SearchForm.track';
 

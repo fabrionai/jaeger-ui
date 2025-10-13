@@ -24,22 +24,22 @@ limitations under the License.
 }
 
 .FilteredList--ListItem.is-striped {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0));
+  background: linear-gradient(to right, rgba(79, 77, 78, 0.2), rgba(79, 77, 78, 0));
 }
 
 .FilteredList--ListItem.is-striped:hover,
 .FilteredList--ListItem:hover {
   background: linear-gradient(
     to right,
-    rgba(135, 232, 222, 0.1),
-    rgba(135, 232, 222, 0.2) 70%,
-    rgba(135, 232, 222, 0)
+    rgba(254, 22, 30, 0.1),
+    rgba(254, 22, 30, 0.2) 70%,
+    rgba(254, 22, 30, 0)
   );
   color: var(--tx-color-title);
 }
 
 .FilteredList--ListItem.is-selected {
-  background: linear-gradient(to right, #87e8de, #87e8deaa 70%, #87e8de00);
+  background: linear-gradient(to right, #fe161e, rgba(254, 22, 30, 0.7) 70%, rgba(254, 22, 30, 0));
   color: var(--tx-color-title);
 }
 
@@ -47,9 +47,9 @@ limitations under the License.
 .FilteredList--ListItem.is-focused {
   background: linear-gradient(
     to right,
-    rgba(135, 232, 222, 0.2),
-    rgba(17, 153, 153, 0.2) 70%,
-    rgba(17, 153, 153, 0)
+    rgba(254, 22, 30, 0.2),
+    rgba(254, 22, 30, 0.2) 70%,
+    rgba(254, 22, 30, 0)
   );
   color: var(--tx-color-title);
 }

@@ -21,29 +21,29 @@ limitations under the License.
 }
 
 .NameSelector.is-invalid {
-  background: #fff2e888;
-  border-color: #ffbb96;
-  outline-color: #fff2e888;
+  background: rgba(254, 22, 30, 0.2);
+  border-color: #fe161e;
+  outline-color: rgba(254, 22, 30, 0.2);
 }
 
 .NameSelector.is-invalid:hover {
-  background: #fff2e8;
-  border-color: #ff9c6e;
-  outline-color: #fff2e8;
+  background: rgba(254, 22, 30, 0.3);
+  border-color: #ff4449;
+  outline-color: rgba(254, 22, 30, 0.3);
 }
 
 .NameSelector:hover {
-  background: #f4f4f4;
-  border-color: #ccc;
+  background: #4f4d4e;
+  border-color: #9b999a;
   color: var(--tx-color-body);
-  outline-color: #f4f4f4;
+  outline-color: #4f4d4e;
 }
 
 .NameSelector.is-active {
-  background: #ddd;
-  border-color: #bbb;
+  background: #9b999a;
+  border-color: #9b999a;
   color: var(--tx-color-body);
-  outline-color: #ddd;
+  outline-color: #9b999a;
 }
 
 .NameSelector--label {
@@ -70,12 +70,12 @@ limitations under the License.
 }
 
 .NameSelector--overlay .ant-popover-arrow {
-  border: 1px solid #999;
+  border: 1px solid #9b999a;
   z-index: -1;
-  background: #bbb;
+  background: #4f4d4e;
 }
 
 .NameSelector--overlay .ant-popover-inner {
-  border: 1px solid #ccc;
+  border: 1px solid #9b999a;
   overflow: hidden;
 }

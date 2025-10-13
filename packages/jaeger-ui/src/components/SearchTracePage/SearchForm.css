@@ -15,20 +15,20 @@ limitations under the License.
 */
 
 .SearchForm--labelCount {
-  color: #999;
+  color: #9b999a;
 }
 
 .SearchForm--hintTrigger {
-  border: 1px solid #999;
+  border: 1px solid #9b999a;
   border-radius: 100px;
-  color: #999;
+  color: #9b999a;
   cursor: pointer;
   padding: 1px;
 }
 
 .SearchForm--hintTrigger:hover {
-  color: #000;
-  border-color: #000;
+  color: #ffffff;
+  border-color: #ffffff;
 }
 
 .SearchForm--tagsHintTitle {
@@ -36,18 +36,18 @@ limitations under the License.
 }
 
 .SearchForm--submit {
-  background-color: #11939a;
+  background-color: #fe161e;
   color: white;
   float: right;
 }
 
 .SearchForm--submit:hover {
-  background-color: #fff;
+  background-color: #ff4449;
   float: right;
 }
 
 .SearchForm--submit:active {
-  background-color: #fff;
+  background-color: #d11218;
   float: right;
 }
 
@@ -56,7 +56,7 @@ limitations under the License.
 }
 
 .SearchForm--tagsHintEg {
-  color: teal;
+  color: #fe161e;
 }
 
 .ant-select-dropdown .rc-virtual-list-holder {
@@ -68,12 +68,12 @@ limitations under the License.
 .ant-select-dropdown .rc-virtual-list::-webkit-scrollbar,
 .ant-select-dropdown .rc-virtual-list-holder::-webkit-scrollbar {
   width: 8px;
-  background-color: #f1f1f1;
+  background-color: #4f4d4e;
 }
 
 .ant-select-dropdown::-webkit-scrollbar-thumb,
 .ant-select-dropdown .rc-virtual-list::-webkit-scrollbar-thumb,
 .ant-select-dropdown .rc-virtual-list-holder::-webkit-scrollbar-thumb {
-  background-color: #292929;
+  background-color: #9b999a;
   border-radius: 4px;
 }

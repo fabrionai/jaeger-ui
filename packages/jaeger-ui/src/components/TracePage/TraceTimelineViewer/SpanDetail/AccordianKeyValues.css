@@ -23,7 +23,7 @@ limitations under the License.
 }
 
 .AccordianKeyValues--header:hover {
-  background: #e8e8e8;
+  background: #4f4d4e;
 }
 
 .AccordianKeyValues--header.is-empty {
@@ -32,7 +32,7 @@ limitations under the License.
 }
 
 .AccordianKeyValues--header.is-high-contrast:not(.is-empty):hover {
-  background: #ddd;
+  background: #9b999a;
 }
 
 .AccordianKeyValues--emptyIcon {

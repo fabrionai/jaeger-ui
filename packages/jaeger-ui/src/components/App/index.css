@@ -18,12 +18,21 @@ limitations under the License.
 .font-reset,
 html > body {
   font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Roboto, Arial, sans-serif;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+html,
+body,
+#root {
+  background-color: #000000;
+  color: #ffffff;
 }
 
 a {
-  color: #11939a;
+  color: #fe161e;
 }
 
 a:hover {
-  color: #00474e;
+  color: #ff4449;
 }

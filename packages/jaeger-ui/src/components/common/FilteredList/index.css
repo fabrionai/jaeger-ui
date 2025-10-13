@@ -15,7 +15,7 @@ limitations under the License.
 */
 
 .FilteredList--list {
-  background: #fafafa;
+  background: #000000;
 }
 
 .FilteredList--filterCheckbox {
@@ -60,6 +60,6 @@ limitations under the License.
 
 .FilteredList--filterInput:focus {
   box-shadow: inset 0px 0px 3px 1px #6aa;
-  outline: 1px solid #199;
+  outline: 1px solid #fe161e;
   outline-offset: -1px;
 }

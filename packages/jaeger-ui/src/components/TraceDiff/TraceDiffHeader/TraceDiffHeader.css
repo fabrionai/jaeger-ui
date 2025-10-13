@@ -15,9 +15,9 @@ limitations under the License.
 */
 
 .TraceDiffHeader {
-  background: #fff;
-  border-bottom: 1px solid #e8e8e8;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  background: #000000;
+  border-bottom: 1px solid #4f4d4e;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
   display: flex;
   flex: 0;
   position: relative;
@@ -30,15 +30,15 @@ limitations under the License.
   align-items: center;
   justify-content: center;
   width: 50px;
-  background: #f5f5f5;
-  border-right: 1px solid #e8e8e8;
+  background: #4f4d4e;
+  border-right: 1px solid #4f4d4e;
 }
 
 .TraceDiffHeader--label {
   margin: 0;
   font-size: 24px;
   font-weight: 600;
-  color: #333;
+  color: #ffffff;
 }
 
 .TraceDiffHeader--traceSection {
@@ -50,7 +50,7 @@ limitations under the License.
 }
 
 .TraceDiffHeader--traceSection:hover {
-  background-color: #f9f9f9;
+  background-color: #4f4d4e;
 }
 
 .TraceDiffHeader--divider {
@@ -58,9 +58,9 @@ limitations under the License.
   align-items: center;
   justify-content: center;
   padding: 0 15px;
-  background: #f5f5f5;
-  border-right: 1px solid #e8e8e8;
-  border-left: 1px solid #e8e8e8;
+  background: #4f4d4e;
+  border-right: 1px solid #4f4d4e;
+  border-left: 1px solid #4f4d4e;
 }
 
 .TraceDiffHeader--vsContainer {
@@ -70,7 +70,7 @@ limitations under the License.
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: #199;
+  background: #fe161e;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   transition:
     transform 0.2s ease,
@@ -92,7 +92,7 @@ limitations under the License.
 
 .TraceDiffHeader--popover .ant-popover-title {
   padding: 10px;
-  border-bottom: 1px solid #e8e8e8;
+  border-bottom: 1px solid #4f4d4e;
 }
 
 .TraceDiffHeader--popover .ant-popover-inner-content {

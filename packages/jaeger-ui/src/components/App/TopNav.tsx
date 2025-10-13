@@ -33,6 +33,7 @@ import prefixUrl from '../../utils/prefix-url';
 
 import './TopNav.css';
 import withRouteProps from '../../utils/withRouteProps';
+import FabrionLogo from '../../img/fabrion-logo.png';
 
 type Props = ReduxState;
 
@@ -110,17 +111,18 @@ function isItem(itemOrGroup: ConfigMenuItem | ConfigMenuGroup): itemOrGroup is C
 const itemsGlobalLeft: MenuProps['items'] = [
   {
     label: (
-      <Link to={prefixUrl('/')} style={{ fontSize: '14px', fontWeight: 500 }}>
-        JAEGER UI
+      <Link to={prefixUrl('/')} style={{ display: 'flex', alignItems: 'center', height: '48px' }}>
+        <img src={FabrionLogo} alt="Fabrion" style={{ height: '32px', width: 'auto', marginTop: '10px' }} />
       </Link>
     ),
-    key: 'JAEGER UI',
+    key: 'FABRION',
   },
 ];
 
-export function TopNavImpl(props: Props) {
-  const { config, router } = props;
-  const { pathname } = router.location;
+export function TopNavImpl(props: Props & { pathname?: string }) {
+  const { config, router, pathname: routePathname } = props;
+  // Use pathname from withRouteProps (via hooks) if available, fallback to Redux state
+  const pathname = routePathname || router.location.pathname;
   const menuItems = Array.isArray(config.menu) ? config.menu : [];
 
   const itemsGlobalRight: MenuProps['items'] = [
