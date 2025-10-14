@@ -15,9 +15,9 @@ limitations under the License.
 */
 
 .scatter-plot-hint {
-  color: #444;
-  background: #f8f8f8;
-  border: 1px solid #ddd;
+  color: var(--brand-grey-40);
+  background: var(--brand-grey-70);
+  border: 1px solid var(--bg-tertiary);
   border-radius: 3px;
   padding: 0.5em;
   margin: 0.5em;

@@ -20,13 +20,13 @@ limitations under the License.
 }
 
 .KeyboardShortcutsHelp--table {
-  background-color: #fafafa;
+  background-color: var(--brand-grey-70);
   max-height: 500px;
   overflow: auto;
 }
 
 .KeyboardShortcutsHelp--oddRow {
-  background-color: #f6f6f6;
+  background-color: var(--brand-grey-70);
 }
 
 .KeyboardShortcutsHelp--table kbd {

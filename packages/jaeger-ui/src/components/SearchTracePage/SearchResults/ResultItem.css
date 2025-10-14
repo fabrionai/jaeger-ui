@@ -15,13 +15,12 @@ limitations under the License.
 */
 
 .ResultItem {
-  border: 1px solid #e6e6e6;
-  background: #fbfbfb;
+  border: 1px solid var(--bg-tertiary);
+  background: var(--bg-secondary);
 }
 
 .ResultItem:hover {
-  background: #f5f5f5;
-  border-color: #d8d8d8;
+  border-color: var(--bg-tertiary);
 }
 
 .ResultItem--serviceTag {
@@ -34,8 +33,19 @@ limitations under the License.
 .ResultItem--errorIcon {
   background: #db2828;
   border-radius: 6.5px;
-  color: #fff;
+  color: #ef0a0a;
   font-size: 0.85em;
   margin-right: 0.25rem;
   padding: 1px;
+}
+
+.ResultItem .ub-tx-right-align {
+  color: var(--bg-tertiary);
+}
+
+/* Error button styling */
+.ResultItem .ant-tag-red {
+  background-color: var(--accent-primary) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--accent-primary) !important;
 }

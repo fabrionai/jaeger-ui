@@ -111,10 +111,7 @@ export default function ResultItem({
                 const { name, numberOfSpans: count } = service;
                 return (
                   <li key={name} className="ub-inline-block ub-m1">
-                    <Tag
-                      className="ResultItem--serviceTag"
-                      style={{ borderLeftColor: colorGenerator.getColorByKey(name) }}
-                    >
+                    <Tag className="ResultItem--serviceTag" style={{ borderLeftColor: 'var(--data-green)' }}>
                       {erroredServices.has(name) && <IoAlert className="ResultItem--errorIcon" />}
                       {name} ({count})
                     </Tag>

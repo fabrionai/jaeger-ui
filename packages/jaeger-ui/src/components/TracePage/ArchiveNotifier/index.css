@@ -30,5 +30,5 @@ limitations under the License.
 }
 
 .ArchiveNotifier--doneIcon {
-  color: teal;
+  color: var(--data-green);
 }

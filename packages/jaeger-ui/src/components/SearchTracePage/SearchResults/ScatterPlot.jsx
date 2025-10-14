@@ -136,9 +136,9 @@ export default function ScatterPlot({
               domain={[xMin, xMax]}
               ticks={generateUniqueTicks(xMin, xMax, 10)}
               tickFormatter={t => dayjs(t / ONE_MILLISECOND).format('hh:mm:ss a')}
-              tick={{ fontSize: 11, dy: 5 }}
-              axisLine={{ stroke: '#e6e6e9', strokeWidth: 2 }}
-              tickLine={{ stroke: '#e6e6e9', strokeWidth: 1 }}
+              tick={{ fontSize: 11, dy: 5, fill: 'var(--brand-grey-40)' }}
+              axisLine={{ stroke: 'var(--brand-grey-40)', strokeWidth: 2 }}
+              tickLine={{ stroke: 'var(--brand-grey-40)', strokeWidth: 1 }}
               allowDecimals={false}
               interval="equidistantPreserveStart"
             >
@@ -147,7 +147,7 @@ export default function ScatterPlot({
                 position="insideTopRight"
                 offset={15}
                 fontSize={11}
-                style={{ textAnchor: 'start' }}
+                style={{ textAnchor: 'start', fill: 'var(--brand-grey-40)' }}
               />
             </XAxis>
             <YAxis
@@ -155,9 +155,9 @@ export default function ScatterPlot({
               dataKey="y"
               name="Duration"
               tickFormatter={t => formatDuration(t)}
-              tick={{ fontSize: 11, dx: -5 }}
-              axisLine={{ stroke: '#e6e6e9', strokeWidth: 2 }}
-              tickLine={{ stroke: '#e6e6e9', strokeWidth: 1 }}
+              tick={{ fontSize: 11, dx: -5, fill: 'var(--brand-grey-40)' }}
+              axisLine={{ stroke: 'var(--brand-grey-40)', strokeWidth: 2 }}
+              tickLine={{ stroke: 'var(--brand-grey-40)', strokeWidth: 1 }}
               tickCount={4}
               allowDecimals={false}
               domain={['auto', 'auto']}
@@ -167,7 +167,7 @@ export default function ScatterPlot({
                 position="insideTopLeft"
                 offset={0}
                 fontSize={11}
-                style={{ textAnchor: 'end' }}
+                style={{ textAnchor: 'end', fill: 'var(--brand-grey-40)' }}
                 angle={-90}
               />
             </YAxis>

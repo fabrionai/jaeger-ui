@@ -40,7 +40,7 @@ limitations under the License.
 }
 
 .button-empty-state {
-  background-color: #11939a;
+  background-color: var(--data-green);
   color: white;
   float: right;
   margin-bottom: 24px;
@@ -50,4 +50,15 @@ limitations under the License.
   width: 100%;
   height: auto;
   margin-top: calc(100vh / 10);
+}
+
+/* Alert background styling */
+.center-empty-state .ant-alert {
+  background-color: var(--brand-grey-70) !important;
+  border-color: var(--brand-grey-40) !important;
+}
+
+/* Alert icon styling */
+.center-empty-state .ant-alert-icon {
+  color: var(--text-primary) !important;
 }

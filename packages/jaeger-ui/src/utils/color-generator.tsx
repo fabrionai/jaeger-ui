@@ -13,7 +13,7 @@
 // limitations under the License.
 
 const COLORS_HEX = [
-  '#17B8BE',
+  'var(--data-green)',
   '#F8DCA1',
   '#B7885E',
   '#FFCB99',
@@ -23,7 +23,7 @@ const COLORS_HEX = [
   '#1E96BE',
   '#89DAC1',
   '#B3AD9E',
-  '#12939A',
+  'var(--data-green)',
   '#DDB27C',
   '#88572C',
   '#FF9833',

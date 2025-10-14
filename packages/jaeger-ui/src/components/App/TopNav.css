@@ -51,6 +51,15 @@ limitations under the License.
   color: white !important;
 }
 
+/* Menu hover background */
+.Menu--item .ant-menu-item:hover {
+  background-color: rgba(254, 22, 30, 0.5) !important;
+}
+
+.ant-dropdown-menu-item:hover {
+  background-color: rgba(254, 22, 30, 0.5) !important;
+}
+
 /* Mobile view - override dark theme background to black */
 @media screen and (max-width: 768px) {
   .Menu--item.ant-menu-dark,

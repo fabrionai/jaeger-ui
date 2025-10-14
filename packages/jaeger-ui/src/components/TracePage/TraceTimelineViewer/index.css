@@ -39,7 +39,7 @@ limitations under the License.
 }
 
 .json-markup-string {
-  color: teal;
+  color: var(--data-green);
 }
 
 .json-markup-null,

@@ -15,8 +15,8 @@ limitations under the License.
 */
 
 .ResultItemTitle {
-  background: #ececec;
-  border-bottom: 1px solid #d8d8d8;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--bg-tertiary);
   display: flex;
 }
 
@@ -24,15 +24,17 @@ limitations under the License.
   color: inherit;
   padding: 0.5rem;
   position: relative;
+  background-color: var(--bg-secondary);
 }
 
 .ResultItemTitle--item:first-child {
-  border-right: 1px solid #ddd;
+  border-right: 1px solid var(--bg-tertiary);
 }
 
 .ResultItemTitle--item:hover {
-  background: #e4e4e4;
-  border-color: #ccc;
+  background: var(--bg-primary);
+  border-color: var(--bg-tertiary);
+  color: var(--text-primary);
 }
 
 .ResultItemTitle--title {
@@ -45,13 +47,13 @@ limitations under the License.
 }
 
 .ResultItemTitle--idExcerpt {
-  color: #888;
+  color: white !important;
   font-weight: normal;
   padding-left: 0.5rem;
 }
 
 .ResultItemTitle--durationBar {
-  background: #d7e7ea;
+  background: var(--bg-tertiary);
   bottom: 0;
   left: 0;
   position: absolute;
@@ -59,5 +61,5 @@ limitations under the License.
 }
 
 .ResultItemTitle--item:hover > .ResultItemTitle--durationBar {
-  background: #c5dde0;
+  background: var(--accent-primary);
 }
