@@ -1,0 +1,105 @@
+name: Build & Push to ECR
+
+on:
+  push:
+    branches: [dev, main]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Target environment (affects tags)"
+        type: choice
+        default: dev
+        options: [dev, prod]
+
+concurrency:
+  group: build-push-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  id-token: write   # required for AWS OIDC
+
+env:
+  AWS_REGION: us-west-1                 # <— change if needed
+  ECR_REPOSITORY: jaeger-ui             # <— your ECR repo name
+  DOCKERFILE_PATH: ./Dockerfile         # <— adjust if not at repo root
+  DOCKER_CONTEXT: .                     # <— adjust if needed
+  # optional: set a default environment when triggered by push
+  DEFAULT_ENV_FOR_BRANCH: ${{ startsWith(github.ref, 'refs/heads/main') && 'prod' || 'dev' }}
+
+jobs:
+  build-push:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Compute registry, image name, and effective env (push vs. manual)
+      - name: Compute image coordinates
+        id: coords
+        run: |
+          ENV_INPUT="${{ github.event_name == 'workflow_dispatch' && inputs.environment || env.DEFAULT_ENV_FOR_BRANCH }}"
+          echo "ENVIRONMENT=$ENV_INPUT" >> $GITHUB_ENV
+
+          echo "ECR_REGISTRY=${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${AWS_REGION}.amazonaws.com" >> $GITHUB_ENV
+          echo "IMAGE_NAME=${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${AWS_REGION}.amazonaws.com/${ECR_REPOSITORY}" >> $GITHUB_ENV
+
+          echo "Env: $ENV_INPUT"
+          echo "Registry: ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${AWS_REGION}.amazonaws.com"
+          echo "Image: ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${AWS_REGION}.amazonaws.com/${ECR_REPOSITORY}"
+
+      # OIDC → short-lived AWS creds (no static keys)
+      - name: Configure AWS credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_CI_ROLE_TO_ASSUME }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Login to Amazon ECR
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      # Generate tags & labels
+      - name: Docker metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.IMAGE_NAME }}
+          tags: |
+            type=raw,value=${{ env.ENVIRONMENT }}
+            type=raw,value=${{ env.ENVIRONMENT }}-${{ github.sha }}
+            type=sha,format=long
+          labels: |
+            org.opencontainers.image.title=jaeger-ui
+            org.opencontainers.image.revision=${{ github.sha }}
+            org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}
+            org.opencontainers.image.version=${{ env.ENVIRONMENT }}
+
+      - name: Build & push
+        uses: docker/build-push-action@v6
+        with:
+          context: ${{ env.DOCKER_CONTEXT }}
+          file: ${{ env.DOCKERFILE_PATH }}
+          push: true
+          # If you need multi-arch, uncomment next line:
+          # platforms: linux/amd64
+          provenance: false
+          sbom: false
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Summary
+        run: |
+          echo "## Pushed image" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Registry:** ${{ env.ECR_REGISTRY }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Repository:** ${{ env.ECR_REPOSITORY }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Tags:**" >> $GITHUB_STEP_SUMMARY
+          echo "${{ steps.meta.outputs.tags }}" | tr ',' '\n' >> $GITHUB_STEP_SUMMARY
+
